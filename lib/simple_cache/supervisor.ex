@@ -11,7 +11,7 @@ defmodule SimpleCache.Supervisor do
 
   def init([]) do
     children = [
-      worker(SimpleCache.Element, [], shutdown: :brutal_kill)
+      worker(SimpleCache.Element, [], restart: :temporary, shutdown: :brutal_kill)
     ]
     supervise children, strategy: :simple_one_for_one
   end

@@ -64,7 +64,7 @@ defmodule SimpleCache.Element do
   end
 
   def terminate(_reason, _state) do
-    # SimpleCache.Store.delete self
+    SimpleCache.Store.delete self
     :ok
   end
 
